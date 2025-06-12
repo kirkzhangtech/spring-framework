@@ -23,7 +23,7 @@ import org.springframework.core.SpringProperties;
 /**
  * Utility for determining if AOT-processed optimizations must be used rather
  * than the regular runtime. Strictly for internal use within the framework.
- *
+ * 抽象类
  * @author Stephane Nicoll
  * @author Sebastien Deleuze
  * @since 6.0

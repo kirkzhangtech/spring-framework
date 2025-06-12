@@ -19,12 +19,10 @@ package org.springframework.core.io;
 import org.jspecify.annotations.Nullable;
 
 /**
- * A resolution strategy for protocol-specific resource handles.
- *
- * <p>Used as an SPI for {@link DefaultResourceLoader}, allowing for
- * custom protocols to be handled without subclassing the loader
- * implementation (or application context implementation).
- *
+一种针对特定协议资源句柄的解析策略。
+
+<p>作为 {@link DefaultResourceLoader} 的 SPI 使用，允许处理自定义协议而无需对加载器实现（或应用程序上下文实现）进行子类化。
+
  * @author Juergen Hoeller
  * @since 4.3
  * @see DefaultResourceLoader#addProtocolResolver

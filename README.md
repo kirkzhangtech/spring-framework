@@ -36,3 +36,19 @@ Follow [@SpringCentral](https://twitter.com/springcentral), [@SpringFramework](h
 ## License
 
 The Spring Framework is released under version 2.0 of the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
+
+
+
+# 项目阅读
+
+1. spring-context是spring的核心模块，包含了IOC 和 bean factory的管理
+2. GenericApplicationContext.java 和 GenericApplicationContext.java 两个重要的context的实现
+3. 核心继承关系
+   1. DefaultResourceLoader
+      实现了基础的资源加载功能
+   2. AbstractApplicationContext AbstractApplicationContext.java:140-141
+      继承自 DefaultResourceLoader
+      实现了 ConfigurableApplicationContext 接口
+   3. GenericApplicationContext GenericApplicationContext.java:109
+      继承自 AbstractApplicationContext
+      实现了 BeanDefinitionRegistry 接口

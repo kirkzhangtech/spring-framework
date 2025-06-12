@@ -24,7 +24,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
 import org.jspecify.annotations.Nullable;
-
 import org.springframework.aot.hint.RuntimeHints;
 import org.springframework.aot.hint.support.ClassHintUtils;
 import org.springframework.beans.BeanUtils;
@@ -108,12 +107,13 @@ import org.springframework.util.Assert;
  */
 public class GenericApplicationContext extends AbstractApplicationContext implements BeanDefinitionRegistry {
 
+	// bean 工厂，储存着所有bean
 	private final DefaultListableBeanFactory beanFactory;
-
+	//  加载 class path or file system resources
 	private @Nullable ResourceLoader resourceLoader;
-
+	//是否自定义classloader
 	private boolean customClassLoader = false;
-
+	// 原子类
 	private final AtomicBoolean refreshed = new AtomicBoolean();
 
 
@@ -131,6 +131,7 @@ public class GenericApplicationContext extends AbstractApplicationContext implem
 	 * @param beanFactory the DefaultListableBeanFactory instance to use for this context
 	 * @see #registerBeanDefinition
 	 * @see #refresh
+	 * 根据已知工厂创建一个类
 	 */
 	public GenericApplicationContext(DefaultListableBeanFactory beanFactory) {
 		Assert.notNull(beanFactory, "BeanFactory must not be null");

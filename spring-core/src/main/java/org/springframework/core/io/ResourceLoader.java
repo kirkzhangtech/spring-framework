@@ -17,7 +17,6 @@
 package org.springframework.core.io;
 
 import org.jspecify.annotations.Nullable;
-
 import org.springframework.util.ResourceUtils;
 
 /**
@@ -42,7 +41,9 @@ import org.springframework.util.ResourceUtils;
  */
 public interface ResourceLoader {
 
-	/** Pseudo URL prefix for loading from the class path: "classpath:". */
+	/** Pseudo URL prefix for loading from the class path: "classpath:".
+	 * 要加载的classpath前缀 
+	 */
 	String CLASSPATH_URL_PREFIX = ResourceUtils.CLASSPATH_URL_PREFIX;
 
 
@@ -63,7 +64,7 @@ public interface ResourceLoader {
 	 * @return a corresponding {@code Resource} handle (never {@code null})
 	 * @see #CLASSPATH_URL_PREFIX
 	 * @see Resource#exists()
-	 * @see Resource#getInputStream()
+	 * @see Resource#getInputStream() 
 	 */
 	Resource getResource(String location);
 

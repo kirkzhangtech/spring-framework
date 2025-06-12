@@ -25,7 +25,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.jspecify.annotations.Nullable;
-
 import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ResourceUtils;
@@ -52,7 +51,7 @@ public class DefaultResourceLoader implements ResourceLoader {
 	private @Nullable ClassLoader classLoader;
 
 	private final Set<ProtocolResolver> protocolResolvers = new LinkedHashSet<>(4);
-
+	// 并发map
 	private final Map<Class<?>, Map<Resource, ?>> resourceCaches = new ConcurrentHashMap<>(4);
 
 
@@ -62,6 +61,8 @@ public class DefaultResourceLoader implements ResourceLoader {
 	 * at the time of actual resource access. For more control, pass
 	 * a specific ClassLoader to {@link #DefaultResourceLoader(ClassLoader)}.
 	 * @see java.lang.Thread#getContextClassLoader()
+	 * 
+	 * 空初始化
 	 */
 	public DefaultResourceLoader() {
 	}
